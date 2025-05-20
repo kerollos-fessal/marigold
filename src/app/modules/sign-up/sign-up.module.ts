@@ -7,10 +7,10 @@ import { SignUpComponent } from './sign-up.component';
 
 @NgModule({
   declarations: [
-    SignUpComponent
   ],
   imports: [
     CommonModule,
+    SignUpComponent,
     SignUpRoutingModule
   ]
 })

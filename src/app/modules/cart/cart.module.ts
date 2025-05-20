@@ -7,10 +7,10 @@ import { CartComponent } from './cart.component';
 
 @NgModule({
   declarations: [
-    CartComponent
   ],
   imports: [
     CommonModule,
+    CartComponent,
     CartRoutingModule
   ]
 })

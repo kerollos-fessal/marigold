@@ -7,10 +7,10 @@ import { ContactUsComponent } from './contact-us.component';
 
 @NgModule({
   declarations: [
-    ContactUsComponent
   ],
   imports: [
     CommonModule,
+    ContactUsComponent,
     ContactUsRoutingModule
   ]
 })

@@ -7,10 +7,10 @@ import { CheckoutComponent } from './checkout.component';
 
 @NgModule({
   declarations: [
-    CheckoutComponent
   ],
   imports: [
     CommonModule,
+    CheckoutComponent,
     CheckoutRoutingModule
   ]
 })

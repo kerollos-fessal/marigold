@@ -7,10 +7,10 @@ import { ShopComponent } from './shop.component';
 
 @NgModule({
   declarations: [
-    ShopComponent
   ],
   imports: [
     CommonModule,
+    ShopComponent,
     ShopRoutingModule
   ]
 })

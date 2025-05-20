@@ -7,10 +7,10 @@ import { ProfileComponent } from './profile.component';
 
 @NgModule({
   declarations: [
-    ProfileComponent
   ],
   imports: [
     CommonModule,
+    ProfileComponent,
     ProfileRoutingModule
   ]
 })

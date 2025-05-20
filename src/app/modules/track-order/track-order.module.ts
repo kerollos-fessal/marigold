@@ -7,11 +7,11 @@ import { TrackOrderComponent } from './track-order.component';
 
 @NgModule({
   declarations: [
-    TrackOrderComponent
   ],
   imports: [
     CommonModule,
-    TrackOrderRoutingModule
+    TrackOrderRoutingModule,
+    TrackOrderComponent
   ]
 })
 export class TrackOrderModule { }
