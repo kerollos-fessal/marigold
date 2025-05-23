@@ -1,1 +1,34 @@
-<p>navbar works!</p>
+<nav class="navbar bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-3">
+      <img src="./assets/images/logo-img.svg" alt="logo" />
+      <img src="./assets/images/logo.svg" alt="logo" />
+    </a>
+
+    <div class="d-flex gap-4 align-items-center links-wrapper">
+      <a routerLink="/home" routerLinkActive="active" class="cursor-pointer"
+        >Home</a
+      >
+      <a routerLink="/shop" routerLinkActive="active" class="cursor-pointer"
+        >Shop</a
+      >
+      <a routerLink="/about" routerLinkActive="active" class="cursor-pointer"
+        >About Us</a
+      >
+      <form class="d-flex" role="search">
+        <mat-form-field appearance="outline" class="search-field">
+          <input matInput placeholder="Search" aria-label="Search" />
+          <button mat-icon-button matSuffix type="submit" aria-label="Search">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </form>
+      <div class="d-flex gap-3 align-items-center">
+        <a class="cursor-pointer" routerLink="/shop" routerLinkActive="active"><img src="./assets/images/nav/bag.svg" alt="bag"></a>
+        <a class="cursor-pointer" routerLink="/cart" routerLinkActive="active"><img src="./assets/images/nav/bell.svg" alt="bell"></a>
+        <a class="cursor-pointer" routerLink="/favourites" routerLinkActive="active"><img src="./assets/images/nav/heart.svg" alt="heart"></a>
+        <a class="cursor-pointer" routerLink="/profile" routerLinkActive="active"><img src="./assets/images/nav/person.svg" alt="person"></a>
+      </div>
+    </div>
+  </div>
+</nav>
