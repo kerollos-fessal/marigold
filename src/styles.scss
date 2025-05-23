@@ -1,21 +1,98 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
-html {
-  @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+:root {
+  --primary-color: #94626F;
+  --secondary-color: #4343438A ;
+  --semi-white-color: #FFFFFF8A;
+  --linear-back: linear-gradient(90deg, #000000 0%, #666666 100%);
+  --linear-text: linear-gradient(90deg, #FF8FAB 0%, #995667 100%);
+
+
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html {
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #000;
+}
+
+.primary{
+  color: var(--primary-color);
+}
+
+.primary-bg{
+  background-color: var(--primary-color);
+}
 
 
-.cursor-pointer{
+.secondary{
+  color: var(--secondary-color);
+}
+
+.semi-trans{
+  color: var(--semi-white-color);
+}
+
+.linear-back{
+  background: var(--linear-back);
+}
+
+.linear-text{
+  background: var(--linear-text);
+}
+
+.cursor-pointer {
   cursor: pointer;
+}
+
+.font-bold {
+  font-weight: 700;
+} 
+
+.font-regular{
+  font-weight: 400;
+}
+
+.font-sm {
+  font-size: 20px;
+}
+
+.font-md {
+  font-size: 24px;
+}
+
+.font-lg {
+  font-size: 32px;
+}
+
+.font-xl {
+  font-size: 48px;
+}
+
+.line-100{
+  line-height: 100%;
+}
+
+.linear-btn{
+  border-radius: 23px;
+  width: 251px;
+  height: 67px;
 }
