@@ -6,3 +6,8 @@ i{
     color: #ffc107;
 }
 
+.plant{
+     @media (max-width: 768px) {
+        width: 60px;
+     }
+}

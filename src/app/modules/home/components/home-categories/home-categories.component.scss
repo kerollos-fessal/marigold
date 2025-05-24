@@ -5,3 +5,9 @@
 .categories-list{
     margin-bottom: 118px;
 }
+
+.plant{
+     @media (max-width: 768px) {
+        width: 60px;
+     }
+}

@@ -3,8 +3,22 @@
     url('/assets/images/half-header.png') left center / 35% 100% no-repeat,
     url('/assets/images/full-girl.png') right center / 65% 100% no-repeat;
     height: 651px;
+
+     @media (max-width: 768px) {
+    background: 
+      url('/assets/images/half-header.png') center center / cover no-repeat;
+    height: 600px; 
+  }
+
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    background-size: 40% 100%, 60% 100%;
+  }
 }
 
 .head-content{
     margin-inline-start: 13rem;
+     @media (max-width: 768px) {
+      margin-inline-start: 2rem;
+    }
 }

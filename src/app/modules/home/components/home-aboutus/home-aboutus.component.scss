@@ -1,3 +1,8 @@
 .about-radius{
 border-radius: 140px;
+
+ @media (max-width: 768px) {
+ border-radius: 84px;
+ width: 300px;
+}
 }
