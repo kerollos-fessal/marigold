@@ -1,1 +1,58 @@
-<p>shop works!</p>
+<section class="all-products">
+  <app-header [title]="'Shop'" />
+  <div class="mt-5 pt-3 container">
+    <div class="row">
+      <div class="col-md-3 rt-border">
+        <div class="d-flex bt-border pb-3 mb-3">
+          <img src="./assets/images/small-half.svg" alt="plant" />
+          <p class="my-0 font-lg">Filter Options</p>
+        </div>
+        @for (group of filterGroups; track group.key) {
+        <div class="bt-border mb-3 pb-32">
+          <h3 class="font-bold font-md mb-4">{{ group.title }}</h3>
+
+          @for (option of group.options; track option.value; let i = $index) {
+          @if (group.key === 'reviews') {
+          <div class="d-flex align-items-center mb-2">
+            <mat-checkbox
+              [formControl]="getFormArray(group.key).controls[i]"
+              (change)="onFilterChange()"
+            >
+            </mat-checkbox>
+            <div class="d-flex gap-2">
+              @for (star of getStars(+option.label); track star.value) {
+              <i
+                class="fa-solid fa-star mr-1"
+                [class.yellow]="star.filled"
+                [class.gray]="!star.filled"
+              >
+              </i>
+              }
+            </div>
+          </div>
+          } @else {
+          <div class="mb-2">
+            <mat-checkbox
+              [formControl]="getFormArray(group.key).controls[i]"
+              (change)="onFilterChange()"
+            >
+              {{ option.label }}
+            </mat-checkbox>
+          </div>
+          } }
+        </div>
+        }
+      </div>
+      <div class="col-md-9">
+        <div class="px-32">
+          <p class="my-0 font-lg pb-32 mt-1">All Products</p>
+          <div class="d-flex flex-wrap gap-4">
+            @if(products){ @for (product of products; track product.id) {
+            <app-product [product]="product" />
+            } }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

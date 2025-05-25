@@ -1,0 +1,23 @@
+.category{
+    color: #00000069;
+}
+
+i.yellow{
+color: #ffc107;
+}
+
+.product-img{
+    border-radius: 32px;
+    width: 271px;
+    height: 308px;
+
+         @media (max-width: 360px) {
+        width: 250px;
+     }
+}
+
+img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

@@ -1,0 +1,37 @@
+.rt-border{
+    border-right: 1px solid #00000057;
+}
+
+.bt-border{
+    border-bottom: 1px solid #00000042
+}
+.pb-32{
+    padding-bottom: 32px;
+}
+
+::ng-deep .mdc-checkbox__background{
+ background-color:#D9D9D94F !important;
+ border-color: #0000004F;
+}
+
+::ng-deep .mdc-checkbox__checkmark{
+    color: #000 !important;
+}
+
+i.yellow{
+       color: #ffc107;
+}
+
+i.gray{
+    color: #cacaca;
+}
+
+.px-32{
+    padding-inline-start: 32px;
+    padding-inline-end: 32px;
+
+            @media (max-width: 360px) {
+      padding-inline-start: 16px;
+    padding-inline-end: 16px;
+     }
+}
