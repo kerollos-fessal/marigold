@@ -1,0 +1,26 @@
+<div>
+  <div
+    [style.background-image]="'url(' + product.mainImage + ')'"
+    class="trio-shadow product-img d-flex flex-column align-items-end gap-4 p-4 mb-4"
+  >
+    <img
+      src="./assets/images/maximize.svg"
+      (click)="maximize()"
+      alt="maximize"
+    /><img src="./assets/images/product-heart.svg" alt="heart" /><img
+      src="./assets/images/nav/bag.svg"
+      alt="bag"
+    />
+  </div>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <p class="my-0 category">{{ product.category }}</p>
+    <div class="d-flex gap-1 align-items-center rating">
+      <i class="fa-solid fa-star yellow"></i><span>{{ product.rating }} </span>
+    </div>
+  </div>
+  <p class="mt-0 mb-2 font-md">{{ product.name }}</p>
+  <p class="mt-0 font-md mb-2">
+    {{ product.inStock ? "In Stock" : "Out of Stock" }}
+  </p>
+  <p class="my-0 primary font-md">{{ product.price }}</p>
+</div>

@@ -1,0 +1,10 @@
+.header-holder {
+  height: 307px;
+  background-image: url('/assets/images/header-bg.png');
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
+}
