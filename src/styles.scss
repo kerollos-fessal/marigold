@@ -5,6 +5,8 @@
   --primary-color: #94626F;
   --secondary-color: #4343438A ;
   --tretiary-color: #000000B5;
+  --gray-text: #00000069;
+  --dark-gray-text: #848484;
   --semi-white-color: #FFFFFF8A;
   --linear-back: linear-gradient(90deg, #000000 0%, #666666 100%);
   --linear-text: linear-gradient(90deg, #FF8FAB 0%, #995667 100%);
@@ -51,6 +53,14 @@ body {
 
 .tretiary{
   color: var(--tretiary-color);
+}
+
+.gray-text{
+  color: var(--gray-text);
+}
+
+.dark-gray{
+  color: var(--dark-gray-text);
 }
 
 .semi-trans{

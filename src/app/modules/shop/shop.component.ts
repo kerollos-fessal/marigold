@@ -125,7 +125,7 @@ export class ShopComponent {
 
   products: Product[] = [
     {
-      id: 1,
+      id: "1",
       name: 'Premium Body Lotion',
       price: 24.99,
       category: 'Body Care',
@@ -134,7 +134,7 @@ export class ShopComponent {
       mainImage: '/assets/images/product.png',
     },
     {
-      id: 2,
+      id: "2",
       name: 'Nail Care Set',
       price: 19.99,
       category: 'Nails Care',
@@ -143,7 +143,7 @@ export class ShopComponent {
       mainImage: '/assets/images/product.png',
     },
     {
-      id: 3,
+      id: "3",
       name: 'Nail Care ',
       price: 19.99,
       category: 'Body Care',
@@ -152,7 +152,7 @@ export class ShopComponent {
       mainImage: '/assets/images/product.png',
     },
     {
-      id: 3,
+      id: "4",
       name: 'polish Care Set',
       price: 19.99,
       category: 'Nails Care',
@@ -161,7 +161,7 @@ export class ShopComponent {
       mainImage: '/assets/images/product.png',
     },
     {
-      id: 4,
+      id: "5",
       name: 'Hair Care',
       price: 19.99,
       category: 'Nails Care',

@@ -1,11 +1,11 @@
 <div>
-  <div
+  <div (click)="productDetails(product.id)"
     [style.background-image]="'url(' + product.mainImage + ')'"
-    class="trio-shadow product-img d-flex flex-column align-items-end gap-4 p-4 mb-4"
+    class="trio-shadow product-img d-flex flex-column align-items-end gap-4 p-4 mb-4 cursor-pointer"
   >
     <img
       src="./assets/images/maximize.svg"
-      (click)="maximize()"
+      (click)="maximize(); $event.stopPropagation()"
       alt="maximize"
     /><img src="./assets/images/product-heart.svg" alt="heart" /><img
       src="./assets/images/nav/bag.svg"
