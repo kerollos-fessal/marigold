@@ -105,6 +105,89 @@ i.quantity{
     flex: 1;
     border-bottom: 1px solid #00000042;
   }
-  
+}
 
+.rating-numbers{
+  border-right: 1px solid #00000057;
+}
+
+.progress{
+  background-color: #D9D9D9A8;
+  border-radius: 10px;
+}
+
+.progress .bg-warning{
+  background-color: #F0C208;
+  border-radius: 10px;
+}
+
+.bt-border{
+  border-bottom: 1px solid #00000042;
+  padding-bottom: 66px;
+  margin-bottom: 84px;
+}
+
+::ng-deep .sort .mat-mdc-text-field-wrapper {
+  border: 2px solid #E5E5E5;
+  background-color: #EEEEEE4A;
+  border-radius: 16px;
+  width: 126px;
+  height: 45px;
+}
+
+::ng-deep .sort .mdc-text-field--outlined .mat-mdc-form-field-infix, ::ng-deep .sort .mdc-text-field--no-label .mat-mdc-form-field-infix{
+padding-top: 9px ;
+}
+
+::ng-deep .sort .mat-mdc-form-field-subscript-wrapper{
+  display: none;
+} 
+
+::ng-deep .sort .mdc-line-ripple::before{
+  display: none;
+}
+
+.duration-value{
+  color: #0000007D;
+}
+
+.person-img{
+  width: 57px;
+  height: 57px;
+}
+
+.review-border{
+  border-bottom: 1px solid #00000042;
+  padding-bottom: 55px;
+  margin-bottom: 55px;
+}
+.mb-71{
+  margin-bottom: 71px;
+}
+
+.submit-form{
+  width: 187px;
+  height: 65px;
+     &:hover {
+        background-color: #fcd5ce4f;
+        color: black !important;
+    }
+}
+
+
+
+.attach-btn{
+  border: 1px solid #A5A2A269;
+  border-radius: 30px;
+}
+
+.fa-file-circle-plus{
+  color: #000;
+  font-size: 42px;
+}
+
+
+
+.hint{
+  color: #00000059;
 }
