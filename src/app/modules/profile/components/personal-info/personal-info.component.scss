@@ -1,0 +1,25 @@
+.profile-img {
+  width: 155px;
+  height: 155px;
+  border: 5px solid #000;
+}
+
+.edit-icon {
+  width: 39px;
+  height: 39px;
+  position: relative;
+  top: -38px;
+}
+
+.hint{
+  color: #00000059;
+}
+
+.submit-form{
+  width: 281px;
+  height: 65px;
+     &:hover {
+        background-color: #fcd5ce4f;
+        color: black !important;
+    }
+}

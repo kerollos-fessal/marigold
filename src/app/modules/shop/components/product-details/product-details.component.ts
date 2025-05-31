@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
@@ -19,21 +19,28 @@ import { CommonModule } from '@angular/common';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnInit{
 quantity: number = 1;
   selectedSortOption: string = 'newest';
  currentRating = 0;
   selectedFile: File | null = null;
+  reviewForm!: FormGroup;
 
-  reviewForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.initReviewForm();
+  }
+
+initReviewForm(){
     this.reviewForm = this.fb.group({
       rating: [0, [Validators.required, Validators.min(1)]],
       title: ['', Validators.required],
       details: ['', Validators.required],
       attachment: [null]
     });
-  }
+}
+
   updateQuantity(increase: boolean): void {
     if(increase){
       this.quantity++

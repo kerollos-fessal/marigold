@@ -1,1 +1,29 @@
-<p>profile works!</p>
+  <section class="profile">
+      <app-header [title]="'My Account'" />
+<div class="container mt-5 pt-4 px-0">
+    <div class="row">
+        <div class="col-lg-3 col-md-4">
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel"  class="side-tabs">
+   @for (tab of tabs; track tab) {
+  <a mat-tab-link
+     [routerLink]="tab.route"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    <!-- <mat-icon class="d-none d-lg-block">{{tab.icon}}</mat-icon> -->
+    {{tab.label}}
+  </a>
+}
+
+  </nav>
+        </div>
+        <div class="col-md-8 col-lg-9">
+    <mat-tab-nav-panel #tabPanel>
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+
+        </div>
+    </div>
+</div>
+
+
+  </section>
