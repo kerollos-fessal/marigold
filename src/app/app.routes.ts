@@ -16,13 +16,13 @@ export const routes: Routes = [
         (m) => m.SignUpModule
       ),
   },
-   {
-    path: 'login',
-    loadChildren: () =>
-      import('./modules/login/login.module').then(
-        (m) => m.LoginModule
-      ),
-  },
+    //  {
+    //   path: 'login',
+    //   loadChildren: () =>
+    //     import('./modules/login/login.module').then(
+    //       (m) => m.LoginModule
+    //     ),
+    // },
 ];
 
 @NgModule({

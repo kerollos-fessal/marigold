@@ -1,11 +1,13 @@
 <nav class="navbar navbar-expand-lg bg-white">
   <div class="container d-flex justify-content-between">
-    <div>
-      <a class="navbar-brand d-flex align-items-center gap-3">
+    @if(hideLogo){
+      <div>
+      <a class="navbar-brand d-flex align-items-center gap-3 cursor-pointer" (click)="toHome()">
         <img src="./assets/images/logo-img.svg" alt="logo" />
         <img src="./assets/images/logo.svg" alt="logo" />
       </a>
     </div>
+  }
 <div>
   <button class="navbar-toggler" type="button" 
           data-bs-toggle="collapse" data-bs-target="#navbarContent" 
@@ -15,7 +17,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarContent">
-    <div class="d-flex flex-column flex-lg-row gap-4 align-items-center links-wrapper w-100">
+    <div class="d-flex flex-column flex-lg-row gap-4 align-items-center links-wrapper w-100 flex-wrap">
       <div class="d-flex flex-column flex-lg-row gap-4">
         <a routerLink="/home" routerLinkActive="active" class="nav-link cursor-pointer">Home</a>
         <a routerLink="/shop" routerLinkActive="active" class="nav-link cursor-pointer">Shop</a>
