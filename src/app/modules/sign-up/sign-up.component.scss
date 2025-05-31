@@ -1,0 +1,23 @@
+.side-bg{
+    background-image: url('/assets/images/signup-bg.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.logo-container{
+    margin-inline-start: 120px;
+}
+
+.key-icon{
+    transform: rotate(130deg);
+}
+
+::ng-deep .signupForm .mat-mdc-text-field-wrapper{
+    box-shadow: var(--single-shadow);
+}
+
+.submit-btn{
+    background-color: #FCD5CE;
+    height: 63px;
+   border: 1px solid #909090B8
+}
