@@ -1,1 +1,334 @@
-<p>product-details works!</p>
+<section class="all-products">
+  <app-header [title]="'Shop'" />
+  <div class="container mt-5 pt-2">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner pb-3">
+            <div class="carousel-item active">
+              <img
+                src="./assets/images/product.png"
+                class="d-block w-100 product-radius product-lg trio-shadow"
+                alt="product"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/product.png"
+                class="d-block w-100 product-radius product-lg trio-shadow"
+                alt="product"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/product.png"
+                class="d-block w-100 product-radius product-lg trio-shadow"
+                alt="product"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev mx-3 rounded-circle bg-black"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next mx-3 rounded-circle bg-black"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-4">
+          <img
+            src="./assets/images/product.png"
+            class="product-radius product-sm trio-shadow"
+            alt="product"
+          />
+          <img
+            src="./assets/images/product.png"
+            class="product-radius product-sm trio-shadow"
+            alt="product"
+          />
+          <img
+            src="./assets/images/product.png"
+            class="product-radius product-sm trio-shadow"
+            alt="product"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <p class="category pt-4 mt-4 mb-4 font-md gray-text">Nail polish</p>
+        <div class="d-flex align-items-center gap-3">
+          <p class="mt-0 mb-2 font-md">Pink Cloud</p>
+          <div class="text-white availability d-flex align-items-center">
+            In Stock
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-2 my-3">
+          <i class="fa-solid fa-star yellow"></i>
+          <i class="fa-solid fa-star yellow"></i>
+          <i class="fa-solid fa-star yellow"></i>
+          <i class="fa-solid fa-star yellow"></i>
+          <i class="fa-solid fa-star yellow"></i>
+          <span class="font-sm"> 5.0</span>
+        </div>
+
+        <p class="mt-0 mb-4 primary font-md">Price</p>
+        <p class="mt-0 dark-gray font-sm">
+          Lorem Ipsum has been the industry's standard
+          <br />
+          dummy text ever since the 1500s, when an <br />unknown printer took a
+          galley.
+        </p>
+        <p class="mt-0 font-bold font-md mb-4">Size / Volume</p>
+        <div class="d-flex flex-wrap gap-3 mb-4">
+          <div class="volume font-sm trio-shadow d-flex justify-content-center align-items-center">30 ml</div>
+          <div class="volume font-sm trio-shadow d-flex justify-content-center align-items-center">40 ml</div>
+          <div class="volume font-sm trio-shadow d-flex justify-content-center align-items-center">50 ml</div>
+        </div>
+        <div class="d-flex flex-wrap gap-4 mb-5 pb-5">
+            <div class="lg-btn  px-3 font-lg mixed-btn d-flex align-items-center justify-content-between">
+                <div (click)="updateQuantity(false)"><i class="fa fa-minus  cursor-pointer quantity"></i></div>
+                <div class="mid-quantity d-flex align-items-center justify-content-center px-4 py-0 h-100 ">{{quantity}}</div>
+                <div (click)="updateQuantity(true)"><i class="fa  fa-plus quantity cursor-pointer"></i></div>
+            </div>
+            <div   class="lg-btn cursor-pointer add-btn primary-bg  text-white d-flex justify-content-center align-items-center">
+                Add to cart
+            </div>
+            <img class="cursor-pointer" src="./assets/images/heart-lg.svg" alt="heart">
+        </div>
+        <hr>
+        <div class="desc-container mt-5 ">
+            <p class="font-bold font-md pt-2 mt-0 mb-4">Description</p>
+             <p class="mt-0 mb-4 dark-gray font-sm">
+          Lorem Ipsum has been the industry's standard
+          <br />
+          dummy text ever since the 1500s, when an <br />unknown printer took a
+          galley.
+        </p>
+         <p class="mt-0 dark-gray font-sm">
+          Lorem Ipsum has been the industry's standard
+          <br />
+          dummy text ever since the 1500s, when an <br />unknown printer took a
+          galley.
+        </p>
+         <p class="mt-0 dark-gray font-sm">
+          Lorem Ipsum has been the industry's standard
+          <br />
+          dummy text ever since the 1500s, when an <br />unknown printer took a
+          galley.
+        </p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex align-items-center separator-with-image justify-content-center">
+        <img src="./assets/images/h-decorate.svg" alt="plant">
+    </div>
+    <div class="row bt-border">
+      <div class="col-sm-4">
+  <div class="d-flex flex-column align-items-center rating-numbers">
+<p class="my-0 font-md">
+ <span class="font-bold font-xxl" >4.8</span> out of 5
+</p>
+<div class="d-flex align-items-center  gap-2 my-3">
+          <i class="fa-solid fa-star yellow"></i>
+          <i class="fa-solid fa-star yellow"></i>
+          <i class="fa-solid fa-star yellow"></i>
+          <i class="fa-solid fa-star yellow"></i>
+          <i class="fa-solid fa-star yellow"></i>
+        </div>
+        <p class="my-0 font-md">(200 Review)</p>
+
+  </div>
+      </div>
+      <div class="col-md-8">
+<div class="d-flex align-items-center gap-4">
+  <div class="text-nowrap font-md">5 star</div>
+  <div class="progress w-100">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="d-flex align-items-center gap-4">
+  <div class="text-nowrap font-md">4 star</div>
+  <div class="progress w-100">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="d-flex align-items-center gap-4">
+  <div class="text-nowrap font-md">3 star</div>
+  <div class="progress w-100">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="d-flex align-items-center gap-4">
+  <div class="text-nowrap font-md">2 star</div>
+  <div class="progress w-100">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="d-flex align-items-center gap-4">
+  <div class="text-nowrap font-md">1 star</div>
+  <div class="progress w-100">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+      </div>
+    </div>
+<div class="d-flex justify-content-between gap-4 flex-wrap mb-5 pb-1" >
+  <p class="my-0 font-bold font-md">
+    Review List
+  </p>
+  <div class="d-flex align-items-center gap-2">
+<p class="my-0 font-sm">
+  Sort by :
+</p>
+<div class="sort">
+   <mat-form-field>
+    <mat-select [(value)]="selectedSortOption" (selectionChange)="onSortChange()">
+      <mat-option value="newest">Newest</mat-option>
+      <mat-option value="oldest">Oldest</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+  </div>
+</div>
+<!-- reviews list -->
+<div class="review-border">
+  <div class="d-flex justify-content-between align-items-center mb-4 pb-2">
+    <div class="d-flex align-items-center gap-3">
+      <img src="./assets/images/person.png" class="person-img trio-shadow rounded-circle" alt="person">
+      <p class="my-0 font-bold font-sm">Samira Samir</p>
+    </div>
+    <p class="my-0 font-sm duration-value">
+      1 month
+    </p>
+  </div>
+  <p class="mt-0 mb-3 font-sm dark-gray">
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley unknown to go
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley 
+  </p>
+   <div class="d-flex align-items-center gap-2 my-3">
+            <i class="fa-solid fa-star yellow"></i>
+            <i class="fa-solid fa-star yellow"></i>
+            <i class="fa-solid fa-star yellow"></i>
+            <i class="fa-solid fa-star yellow"></i>
+            <i class="fa-solid fa-star yellow"></i>
+            <span class="font-sm"> 5.0</span>
+          </div>
+</div>
+<div >
+  <div class="d-flex justify-content-between align-items-center mb-4 pb-2">
+    <div class="d-flex align-items-center gap-3">
+      <img src="./assets/images/person.png" class="person-img trio-shadow rounded-circle" alt="person">
+      <p class="my-0 font-bold font-sm">Bahira Bahir</p>
+    </div>
+    <p class="my-0 font-sm duration-value">
+      1 month
+    </p>
+  </div>
+  <p class="mt-0 mb-3 font-sm dark-gray">
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley unknown to go
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley 
+  </p>
+   <div class="d-flex align-items-center gap-2 my-3">
+            <i class="fa-solid fa-star yellow"></i>
+            <i class="fa-solid fa-star yellow"></i>
+            <i class="fa-solid fa-star yellow"></i>
+            <i class="fa-solid fa-star yellow"></i>
+            <i class="fa-solid fa-star yellow"></i>
+            <span class="font-sm"> 5.0</span>
+          </div>
+</div>
+    <div class="d-flex align-items-center separator-with-image justify-content-center">
+        <img src="./assets/images/h-decorate.svg" alt="plant">
+    </div>
+
+    <!-- review form -->
+       <p class="mt-0 font-bold font-md mb-71">
+   Add your review
+  </p>
+
+<form [formGroup]="reviewForm" (ngSubmit)="onSubmit()" class="review-form">
+  <!-- Star Rating -->
+  <div class="rating-section">
+    <label class="font-md">Your Rating *</label>
+    <div class="star-rating mb-4 pb-2">
+      @for (star of [1,2,3,4,5]; track star; let i = $index) {
+  <button mat-icon-button 
+          (click)="setRating(star)" 
+          type="button">
+    @if (star <= currentRating) {
+      <i class="fas fa-star"></i>
+    }
+    @if (star > currentRating) {
+      <i class="far fa-star"></i>
+    }
+  </button>
+}
+    </div>
+  </div>
+
+  <!-- Review Title -->
+<div class="mb-4">
+  <label class="d-block font-md mb-3">Add Review Title *</label>
+  <div class="w-100 "  >
+    <input formControlName="title" placeholder="Write Title here" class="form-control rounded-5 custom-input font-md" required>
+  @if(reviewForm.get('title')?.hasError('required') && 
+     (reviewForm.get('title')?.dirty || reviewForm.get('title')?.touched)){
+     <p class="text-danger">  Title is required</p>
+
+  } 
+  </div>
+</div>
+
+  <!-- Review Details -->
+   <div class="mb-4">
+     <label class="d-block font-md mb-3 ">Add Detailed Review *</label>
+     <div  class="w-100">
+       <textarea class="form-control rounded-5 custom-input font-md" placeholder="Write here"  formControlName="details" rows="8" required></textarea>
+      @if(reviewForm.get('details')?.hasError('required') && 
+     (reviewForm.get('details')?.dirty || reviewForm.get('details')?.touched)){
+        <p class="text-danger">
+          Review details are required
+        </p>
+      }
+     </div>
+   </div>
+
+  <!-- Attachment -->
+  <div class="attachment-section mb-4">
+    <label class="d-block font-md mb-3">Photo / Video (Optional)</label>
+    <div>
+      <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*,video/*" hidden>
+      <button  type="button" class="w-100 btn attach-btn d-flex flex-column gap-3 py-5 justify-content-center align-items-center" (click)="fileInput.click()">
+       <i class="fa-solid fa-file-circle-plus"></i>
+       <span class="hint font-sm">Drag a Photo or Video</span>
+       <span class="font-md font-bold">Browse</span>
+      </button>
+    </div>
+    @if(selectedFile){
+      <div  class="file-info d-flex align-items-center pt-1">
+     <p class="my-0 pt-2"> {{ selectedFile.name }}</p>
+      <button mat-icon-button (click)="removeFile()">
+        <i class="fas fa-times text-danger"></i>
+      </button>
+    </div>
+  }
+  </div>
+
+  <!-- Submit Button -->
+  <button  class="primary-bg btn font-md submit-form rounded-pill single-shadow px-3 mt-3" [class]="reviewForm.invalid? 'text-secondary border border-secondary': 'text-white'" type="submit" [disabled]="!reviewForm.valid">
+    Submit
+  </button>
+</form>
+
+  </div>
+</section>

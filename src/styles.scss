@@ -5,11 +5,14 @@
   --primary-color: #94626F;
   --secondary-color: #4343438A ;
   --tretiary-color: #000000B5;
+  --gray-text: #00000069;
+  --dark-gray-text: #848484;
   --semi-white-color: #FFFFFF8A;
   --linear-back: linear-gradient(90deg, #000000 0%, #666666 100%);
   --linear-text: linear-gradient(90deg, #FF8FAB 0%, #995667 100%);
+  --single-shadow: 0px 4px 4px 0px #00000040;
   --custom-shadow:  0px 4px 4px 0px #00000040, 0px 4px 4px 0px #00000040;
-  --trio-shadow: box-shadow: 0px 4px 4px 0px #00000040, 0px 4px 4px 0px #00000040, 0px 4px 4px 0px #00000040;
+  --trio-shadow:  0px 4px 4px 0px #00000040, 0px 4px 4px 0px #00000040, 0px 4px 4px 0px #00000040;
 }
 
 html {
@@ -53,8 +56,20 @@ body {
   color: var(--tretiary-color);
 }
 
+.gray-text{
+  color: var(--gray-text);
+}
+
+.dark-gray{
+  color: var(--dark-gray-text);
+}
+
 .semi-trans{
   color: var(--semi-white-color);
+}
+
+.single-shadow{
+  box-shadow: var(--single-shadow);
 }
 
 .custom-shadow{
@@ -62,7 +77,7 @@ body {
 }
 
 .trio-shadow{
-  box-shadow: var(--custom-shadow);
+  box-shadow: var(--trio-shadow);
 }
 
 .linear-back{
@@ -145,4 +160,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+input{
+  height: 60px;
+}
+
+.custom-input::placeholder {
+  color: #00000059;
+  font-size: 24px;
+  opacity: 1; 
 }
