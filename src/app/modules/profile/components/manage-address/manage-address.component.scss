@@ -1,0 +1,20 @@
+.submit-form{
+  height: 65px;
+     &:hover {
+        background-color: #fcd5ce4f;
+        color: black !important;
+    }
+}
+
+.all-addresses{
+    border: 1px solid #A5A2A269;
+    border-radius: 10px;
+}
+
+.address-gray{
+    color: #00000059;
+}
+
+.btm-border{
+    border-bottom:1px solid #A5A2A269;
+}

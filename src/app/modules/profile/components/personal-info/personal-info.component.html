@@ -1,0 +1,153 @@
+<section class="personal-info">
+  <form
+    [formGroup]="updateProfileForm"
+    (ngSubmit)="onSubmit()"
+    class="review-form"
+  >
+    <div class="d-flex flex-column align-items-end w-fit">
+      <img
+        #profileImage
+        class="trio-shadow profile-img rounded-circle"
+        [src]="profileImageUrl || './assets/images/person.svg'"
+        alt="profile"
+      />
+      <input
+        #fileInput
+        type="file"
+        accept="image/*"
+        hidden
+        (change)="handleImageUpload($event)"
+        formControlName="profileImg"
+      />
+      <img
+        (click)="fileInput.click()"
+        class="edit-icon cursor-pointer"
+        src="./assets/images/edit-profile.svg"
+        alt="edit"
+      />
+    </div>
+
+    <div class="d-flex flex-wrap flex-md-nowrap gap-4">
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">First Name *</label>
+        <div class="w-100">
+          <input
+            formControlName="firstName"
+            placeholder="Write your first name here"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(updateProfileForm.get('firstName')?.hasError('required') &&
+          (updateProfileForm.get('firstName')?.dirty ||
+          updateProfileForm.get('firstName')?.touched)){
+          <p class="text-danger">First Name is required</p>
+          }
+        </div>
+      </div>
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Last Name *</label>
+        <div class="w-100">
+          <input
+            formControlName="lastName"
+            placeholder="Write your last name here"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(updateProfileForm.get('lastName')?.hasError('required') &&
+          (updateProfileForm.get('lastName')?.dirty ||
+          updateProfileForm.get('lastName')?.touched)){
+          <p class="text-danger">Last Name is required</p>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="mb-4 w-100">
+      <label class="d-block font-md mb-3">Email *</label>
+      <div class="w-100">
+        <input
+          formControlName="email"
+          placeholder="someone@gmail.com"
+          class="form-control rounded-5 custom-input font-md"
+          required
+        />
+        @if(updateProfileForm.get('email')?.hasError('required') &&
+        (updateProfileForm.get('email')?.dirty ||
+        updateProfileForm.get('email')?.touched)){
+        <p class="text-danger">Email is required</p>
+        } @if(updateProfileForm.get('email')?.hasError('email') &&
+        (updateProfileForm.get('email')?.dirty ||
+        updateProfileForm.get('email')?.touched)){
+        <p class="text-danger">Incorrect email format</p>
+        }
+      </div>
+    </div>
+
+    <div class="mb-4 w-100">
+      <label class="d-block font-md mb-3">Country *</label>
+      <div class="w-100">
+        <input
+          formControlName="country"
+          placeholder="Egypt"
+          class="form-control rounded-5 custom-input font-md"
+          required
+        />
+        @if(updateProfileForm.get('country')?.hasError('required') &&
+        (updateProfileForm.get('country')?.dirty ||
+        updateProfileForm.get('country')?.touched)){
+        <p class="text-danger">Country is required</p>
+        }
+      </div>
+    </div>
+    <div class="mb-4 w-100">
+      <label class="d-block font-md mb-3">Phone *</label>
+      <div class="w-100">
+        <input
+          type="number"
+          formControlName="phone"
+          placeholder="01020878012"
+          class="form-control rounded-5 custom-input font-md"
+          required
+        />
+        @if(updateProfileForm.get('phone')?.hasError('required') &&
+        (updateProfileForm.get('phone')?.dirty ||
+        updateProfileForm.get('phone')?.touched)){
+        <p class="text-danger">Phone is required</p>
+        }
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="d-block font-md mb-3">Gender *</label>
+      <select
+        formControlName="gender"
+        aria-placeholder="Select Gender"
+        class="form-select custom-input rounded-5"
+        aria-label="select gender"
+      >
+        <option class="text-gray" value="" disabled selected hidden>
+          Select Gender
+        </option>
+        <option value="1">Male</option>
+        <option value="Female">Female</option>
+        <option value="3">Other</option>
+      </select>
+      @if(updateProfileForm.get('gender')?.hasError('required') &&
+      (updateProfileForm.get('gender')?.dirty ||
+      updateProfileForm.get('gender')?.touched)){
+      <p class="text-danger">gender is required</p>
+
+      }
+    </div>
+    <button
+      class="primary-bg btn font-md submit-form w-fit rounded-pill single-shadow px-3 mt-3"
+      [class]="
+        updateProfileForm.invalid
+          ? 'text-secondary border border-secondary'
+          : 'text-white'
+      "
+      type="submit"
+      [disabled]="!updateProfileForm.valid"
+    >
+      Update Changes
+    </button>
+  </form>
+</section>

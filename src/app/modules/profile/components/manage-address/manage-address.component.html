@@ -1,0 +1,221 @@
+<section class="manage-address">
+  <div class="all-addresses mb-5">
+    @for (address of addresses; track $index) {
+  <div class="d-flex py-3 px-5 flex-wrap gap-3 justify-content-between align-items-center" [class.btm-border]="!$last">
+    <div>
+      <p class="mt-0 mb-2 font-md">{{ address.firstName }} {{ address.lastName }}</p>
+      <p class="my-0 font-sm address-gray">{{ address.fullAddress }}</p>
+    </div>
+    <div class="d-flex align-items-center gap-5">
+      <p class="my-0 font-sm cursor-pointer" (click)="editAddress($index)">
+        Edit
+      </p>
+      <p class="my-0 red-text font-sm cursor-pointer" (click)="deleteAddress($index)">
+        Delete
+      </p>
+    </div>
+  </div>
+} @empty {
+  <p class="pt-4 pb-1  text-center primary font-bold font-sm">No addresses saved yet</p>
+}
+  </div>
+  <div class="address-form">
+    <p class="mt-0 mb-4 pb-2 font-bold font-lg">Add New Address</p>
+    <form
+      [formGroup]="addressForm"
+      (ngSubmit)="onSubmit()"
+      class="address-form"
+    >
+      <div class="d-flex flex-wrap flex-md-nowrap gap-4">
+        <div class="mb-4 w-100">
+          <label class="d-block font-md mb-3">First Name *</label>
+          <div class="w-100">
+            <input
+              formControlName="firstName"
+              placeholder="First Name"
+              class="form-control rounded-5 custom-input font-md"
+              required
+            />
+            @if(addressForm.get('firstName')?.hasError('required') &&
+            (addressForm.get('firstName')?.dirty ||
+            addressForm.get('firstName')?.touched)){
+            <p class="text-danger">First Name is required</p>
+            }
+          </div>
+        </div>
+        <div class="mb-4 w-100">
+          <label class="d-block font-md mb-3">Last Name *</label>
+          <div class="w-100">
+            <input
+              formControlName="lastName"
+              placeholder="Last Name"
+              class="form-control rounded-5 custom-input font-md"
+              required
+            />
+            @if(addressForm.get('lastName')?.hasError('required') &&
+            (addressForm.get('lastName')?.dirty ||
+            addressForm.get('lastName')?.touched)){
+            <p class="text-danger">Last Name is required</p>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Company (Optional)</label>
+        <div class="w-100">
+          <input
+            formControlName="company"
+            placeholder="Enter Company Name"
+            class="form-control rounded-5 custom-input font-md"
+          />
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="d-block font-md mb-3">Country *</label>
+        <select
+          formControlName="country"
+          aria-placeholder="Select Country"
+          class="form-select custom-input rounded-5"
+          aria-label="select country"
+        >
+          <option class="text-gray" value="" disabled selected hidden>
+            Select Country
+          </option>
+          <option value="1">Egypt</option>
+          <option value="2">America</option>
+          <option value="3">UAE</option>
+        </select>
+        @if(addressForm.get('country')?.hasError('required') &&
+        (addressForm.get('country')?.dirty ||
+        addressForm.get('country')?.touched)){
+        <p class="text-danger">country is required</p>
+
+        }
+      </div>
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Street Address *</label>
+        <div class="w-100">
+          <input
+            formControlName="street"
+            placeholder="Enter Street Address"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(addressForm.get('street')?.hasError('required') &&
+          (addressForm.get('street')?.dirty ||
+          addressForm.get('street')?.touched)){
+          <p class="text-danger">Street Address is required</p>
+          }
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="d-block font-md mb-3">City *</label>
+        <select
+          formControlName="city"
+          aria-placeholder="Select City"
+          class="form-select custom-input rounded-5"
+          aria-label="select state"
+        >
+          <option class="text-gray" value="" disabled selected hidden>
+            Select City
+          </option>
+          <option value="1">Alexandria</option>
+          <option value="2">Cairo</option>
+          <option value="3">Tanta</option>
+        </select>
+        @if(addressForm.get('city')?.hasError('required') &&
+        (addressForm.get('city')?.dirty || addressForm.get('city')?.touched)){
+        <p class="text-danger">City is required</p>
+
+        }
+      </div>
+      <div class="mb-4">
+        <label class="d-block font-md mb-3">State *</label>
+        <select
+          formControlName="state"
+          aria-placeholder="Select state"
+          class="form-select custom-input rounded-5"
+          aria-label="select state"
+        >
+          <option class="text-gray" value="" disabled selected hidden>
+            Select State
+          </option>
+          <option value="1">Egypt</option>
+          <option value="2">America</option>
+          <option value="3">UAE</option>
+        </select>
+        @if(addressForm.get('state')?.hasError('required') &&
+        (addressForm.get('state')?.dirty || addressForm.get('state')?.touched)){
+        <p class="text-danger">State is required</p>
+
+        }
+      </div>
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Zip Code *</label>
+        <div class="w-100">
+          <input
+            type="number"
+            formControlName="zipCode"
+            placeholder="Enter Zip Code"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(addressForm.get('zipCode')?.hasError('required') &&
+          (addressForm.get('zipCode')?.dirty ||
+          addressForm.get('zipCode')?.touched)){
+          <p class="text-danger">Zip Code is required</p>
+          }
+        </div>
+      </div>
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Phone *</label>
+        <div class="w-100">
+          <input
+            type="number"
+            formControlName="phone"
+            placeholder="Enter Phone Number"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(addressForm.get('phone')?.hasError('required') &&
+          (addressForm.get('phone')?.dirty ||
+          addressForm.get('phone')?.touched)){
+          <p class="text-danger">Phone is required</p>
+          }
+        </div>
+      </div>
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Email Address *</label>
+        <div class="w-100">
+          <input
+            formControlName="email"
+            placeholder="Enter Email Address"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(addressForm.get('email')?.hasError('required') &&
+          (addressForm.get('email')?.dirty ||
+          addressForm.get('email')?.touched)){
+          <p class="text-danger">Email is required</p>
+          } @if(addressForm.get('email')?.hasError('email') &&
+          (addressForm.get('email')?.dirty ||
+          addressForm.get('email')?.touched)){
+          <p class="text-danger">Incorrect email format</p>
+          }
+        </div>
+      </div>
+      <button
+        class="primary-bg btn font-md submit-form w-fit rounded-pill single-shadow px-4 mt-3"
+        [class]="
+          addressForm.invalid
+            ? 'text-secondary border border-secondary'
+            : 'text-white'
+        "
+        type="submit"
+        [disabled]="addressForm.invalid"
+      >
+        {{ editMode ? "Update Address" : "Add Address" }}
+      </button>
+    </form>
+  </div>
+</section>

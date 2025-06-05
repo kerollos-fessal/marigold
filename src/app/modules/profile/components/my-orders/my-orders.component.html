@@ -1,0 +1,129 @@
+<section class="my-orders">
+    <div class="inprogress-orders">
+
+        <div
+          class="order-info-header primary-bg p-4 d-flex justify-content-between flex-wrap flex-lg-nowrap text-white font-sm"
+        >
+          <div>
+            <p class="mt-4 pt-2 mb-3">Order ID</p>
+            <p class="my-0 font-bold info-p">{{ order.orderId }}</p>
+          </div>
+          <div class="v-border ms-2 me-4"></div>
+          <div>
+            <p class="mt-4 pt-2 mb-3">Payment Method</p>
+            <p class="my-0 font-bold info-p">{{ order.paymentMethod }}</p>
+          </div>
+          <div class="v-border ms-2 me-4"></div>
+          <div>
+            <p class="mt-4 pt-2 mb-3">Transaction ID</p>
+            <p class="my-0 font-bold info-p">{{ order.transactionId }}</p>
+          </div>
+          <div class="v-border ms-2 me-4"></div>
+          <div>
+            <p class="mt-4 pt-2 mb-3">Estimated Delivery Date</p>
+            <p class="my-0 font-bold info-p">{{ order.deliveryDate }}</p>
+          </div>
+        </div>
+      
+        <div class="order-info-body">
+          <div class="single-product d-flex align-items-center py-3 px-4 gap-4">
+              <div class="product-img trio-shadow"><img class="w-100" src="./assets/images/product.png" alt="product"></div>
+              <div>
+                  <p class="mt-0 font-sm mb-2">Nail Polish</p>
+                  <p class="my-0 gray-text">Skin Care</p>
+              </div>
+          </div>
+          <div class="single-product d-flex align-items-center py-3 px-4 gap-4">
+              <div class="product-img trio-shadow"><img class="w-100" src="./assets/images/product.png" alt="product"></div>
+              <div>
+                  <p class="mt-0 font-sm mb-2">Nail Polish</p>
+                  <p class="my-0 gray-text">Skin Care</p>
+              </div>
+          </div>
+          <div class="single-product d-flex align-items-center py-3 px-4 gap-4">
+              <div class="product-img trio-shadow"><img class="w-100" src="./assets/images/product.png" alt="product"></div>
+              <div>
+                  <p class="mt-0 font-sm mb-2">Nail Polish</p>
+                  <p class="my-0 gray-text">Skin Care</p>
+              </div>
+          </div>
+          <div class="mt-4 pt-2 px-4">
+              <div class="d-flex gap-2 align-items-center mb-4">
+                  <div  class="text-white availability d-flex align-items-center">Accepted</div>
+      <p class="my-0">Your Order has been Accepted</p>
+              </div>
+              <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 pb-2">
+      
+                  <div class="d-flex flex-wrap gap-4">
+                      <button class="btn  text-white font-sm rounded-5 action-btn primary-bg single-shadow">
+              Track Order
+                      </button>
+                      <button class="btn  bg-white primary font-sm rounded-5 action-btn  single-shadow">
+          Invoice
+                      </button>
+                  </div>
+                  <p class="my-0 red-text font-sm cursor-pointer">
+                      Cancel Order
+                  </p>
+              </div>
+          </div>
+        </div>
+    </div>
+        <div class="completed-orders mt-5">
+
+        <div
+          class="order-info-header primary-bg p-4 d-flex justify-content-between flex-wrap flex-lg-nowrap text-white font-sm"
+        >
+          <div>
+            <p class="mt-4 pt-2 mb-3">Order ID</p>
+            <p class="my-0 font-bold info-p">{{ order.orderId }}</p>
+          </div>
+          <div class="v-border ms-2 me-4"></div>
+          <div>
+            <p class="mt-4 pt-2 mb-3">Payment Method</p>
+            <p class="my-0 font-bold info-p">{{ order.paymentMethod }}</p>
+          </div>
+          <div class="v-border ms-2 me-4"></div>
+          <div>
+            <p class="mt-4 pt-2 mb-3">Transaction ID</p>
+            <p class="my-0 font-bold info-p">{{ order.transactionId }}</p>
+          </div>
+          <div class="v-border ms-2 me-4"></div>
+          <div>
+            <p class="mt-4 pt-2 mb-3">Delivery Date</p>
+            <p class="my-0 font-bold info-p">{{ order.deliveryDate }}</p>
+          </div>
+        </div>
+      
+        <div class="order-info-body">
+       
+          <div class="single-product d-flex align-items-center py-3 px-4 gap-4">
+              <div class="product-img trio-shadow"><img class="w-100" src="./assets/images/product.png" alt="product"></div>
+              <div>
+                  <p class="mt-0 font-sm mb-2">Nail Polish</p>
+                  <p class="my-0 gray-text">Skin Care</p>
+              </div>
+          </div>
+          <div class="mt-4 pt-2 px-4">
+              <div class="d-flex gap-2 align-items-center mb-4">
+                  <div  class="text-white delivered bg-black d-flex align-items-center rounded-pill">Delivered</div>
+      <p class="my-0">Your Order has been Delivered</p>
+              </div>
+              <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 pb-2">
+      
+                  <div class="d-flex flex-wrap gap-4">
+                      <button class="btn  text-white font-sm rounded-5 action-btn primary-bg single-shadow">
+             Add Review
+                      </button>
+                      <button class="btn  primary font-sm rounded-5 action-btn bg-white single-shadow">
+          Invoice
+                      </button>
+                  </div>
+                  <p class="my-0 red-text font-sm cursor-pointer">
+                      Cancel Order
+                  </p>
+              </div>
+          </div>
+        </div>
+    </div>
+</section>
