@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { newPasswordMatchValidator } from 'src/app/shared/validators/match-new-passwords';
 
 @Component({
   selector: 'app-password-management',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, MatIconModule, MatButtonModule],
   templateUrl: './password-management.component.html',
   styleUrl: './password-management.component.scss'
 })
