@@ -1,0 +1,21 @@
+.payment-wrapper {
+  border: 1px solid #a5a2a269;
+  border-radius: 10px;
+  min-height: 77px;
+}
+
+.submit-form {
+  height: 65px;
+  width: 187px;
+  &:hover {
+    background-color: #fcd5ce4f;
+    color: #000000 !important;
+  }
+}
+
+.custom-width {
+  width: 50%;
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+}

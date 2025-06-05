@@ -1,1 +1,152 @@
-<p>payment-method works!</p>
+<section class="payment-method">
+  <div
+    class="payment-wrapper mb-4 px-5 d-flex flex-wrap align-items-center justify-content-between gap-3"
+  >
+    <div class="font-md d-flex align-items-center gap-3">
+      <img src="./assets/images/paypal.svg" alt="paypal" />
+      Paypal
+    </div>
+    <p class="my-0 font-md cursor-pointer">Link Account</p>
+  </div>
+  @if(savedCards.length === 0){
+    <div 
+    class="payment-wrapper mb-4 px-5 d-flex flex-wrap align-items-center justify-content-between gap-3"
+  >
+    <div class="font-md d-flex align-items-center gap-3">
+      <img src="./assets/images/visa.svg" alt="paypal" />
+      **** **** **** 8047
+    </div>
+    <p class="my-0 font-md red-text cursor-pointer">Delete</p>
+  </div>
+}
+   @for (card of savedCards; track $index) {
+<div
+    class="payment-wrapper mb-4 px-5 d-flex flex-wrap align-items-center justify-content-between gap-3"
+  >
+    <div class="font-md d-flex align-items-center gap-3">
+      <img src="./assets/images/visa.svg" alt="visa" />
+      {{ card.maskedNumber }}
+    </div>
+    <p class="my-0 font-md red-text cursor-pointer" (click)="deleteCard($index)">Delete</p>
+  </div>
+   }
+  <div
+    class="payment-wrapper px-5 mb-4 d-flex flex-wrap align-items-center justify-content-between gap-3"
+  >
+    <div class="font-md d-flex align-items-center gap-3">
+      <img src="./assets/images/google.svg" alt="google" />
+      Google Pay
+    </div>
+    <p class="my-0 font-md cursor-pointer">Link Account</p>
+  </div>
+  <div class="payment-wrapper px-5 pt-4">
+    <div class="font-md d-flex pt-2 mb-4 pb-3 align-items-center gap-3">
+      <img src="./assets/images/card.svg" alt="paypal" />
+      Add New Credit/Debit Card
+    </div>
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="card-form">
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Card Holder Name *</label>
+        <div class="w-100">
+          <input
+            formControlName="holderName"
+            placeholder="Card Holder Name"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(cardForm.get('holderName')?.hasError('required') &&
+          (cardForm.get('holderName')?.dirty ||
+          cardForm.get('holderName')?.touched)){
+          <p class="text-danger">Holder Name is required</p>
+          }
+        </div>
+      </div>
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Card Number *</label>
+        <div class="w-100">
+          <input
+            type="number"
+            formControlName="cardNumber"
+            placeholder="Card Number"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(cardForm.get('cardNumber')?.hasError('required') &&
+          (cardForm.get('cardNumber')?.dirty ||
+          cardForm.get('cardNumber')?.touched)){
+          <p class="text-danger">Card Number is required</p>
+          }
+             @if( cardForm.get('cardNumber')?.hasError('pattern') && !cardForm.get('cardNumber')?.hasError('required') &&
+          (cardForm.get('cardNumber')?.dirty ||
+          cardForm.get('cardNumber')?.touched)){
+          <p class="text-danger">Invalid Card Number</p>
+          }
+        </div>
+      </div>
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Cvv *</label>
+        <div class="w-100">
+          <input
+            type="number"
+            formControlName="cvv"
+            placeholder="Enter cvv number"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(cardForm.get('cvv')?.hasError('required') &&
+          (cardForm.get('cvv')?.dirty ||
+          cardForm.get('cvv')?.touched)){
+          <p class="text-danger">Cvv Number is required</p>
+          }
+           @if(cardForm.get('cvv')?.hasError('pattern') && !cardForm.get('cvv')?.hasError('required') &&
+          (cardForm.get('cvv')?.dirty ||
+          cardForm.get('cvv')?.touched)){
+          <p class="text-danger">Cvv Number is invlaid</p>
+          }
+        </div>
+      </div>
+      <div class="mb-4 custom-width">
+        <label class="d-block font-md mb-3">Expiry Date *</label>
+        <div class="w-100">
+          <input
+            type="date"
+            formControlName="expiryDate"
+            placeholder="Date"
+            class="form-control w-100 rounded-5 custom-input font-md"
+            required
+            [min]="todayDate | date : 'yyyy-MM-dd'"
+          />
+          @if(cardForm.get('expiryDate')?.hasError('required') &&
+          (cardForm.get('expiryDate')?.dirty ||
+          cardForm.get('expiryDate')?.touched)){
+          <p class="text-danger">Expiry Date is required</p>
+          }
+        </div>
+      </div>
+      <div class="form-check d-flex align-items-center gap-3 font-sm">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="saveCard"
+          id="saveCard"
+          formControlName="saveCard"
+        />
+        <label class="form-check-label" for="saveCard">
+          <p class="mb-0 mt-1">Save Card for future payments</p>
+        </label>
+      </div>
+      <button
+        class="primary-bg mb-5 btn font-md submit-form w-fit rounded-pill single-shadow px-4 mt-3"
+        [class]="
+          cardForm.invalid
+            ? 'text-secondary border border-secondary'
+            : 'text-white'
+        "
+        type="submit"
+        [disabled]="cardForm.invalid"
+      >
+        Add Card
+      </button>
+    </form>
+  </div>
+</section>
