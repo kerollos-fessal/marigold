@@ -1,0 +1,88 @@
+::ng-deep .orders-table thead .mat-mdc-header-row {
+  background-color: var(--primary-color);
+  border-radius: 30px !important;
+  border-width: 0.5px;
+}
+
+::ng-deep .orders-table tbody tr {
+  border-bottom: 1px solid #56565657;
+    margin-block: 24px ;
+}
+
+::ng-deep .orders-table tbody .mat-mdc-cell {
+  border-bottom: none;
+      padding-block: 24px;
+}
+
+::ng-deep .orders-table tbody .mat-mdc-cell:first-child {
+  width: 40px;
+}
+
+::ng-deep .orders-table .mat-mdc-table {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+th {
+  color: #fff;
+  height: 140px;
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+::ng-deep .orders-table .mat-mdc-table thead:first-child,
+::ng-deep .orders-table .mat-mdc-table .mat-mdc-header-cell:first-child {
+  border-width: 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+::ng-deep .orders-table .mat-mdc-table thead:last-child,
+::ng-deep .orders-table .mat-mdc-table .mat-mdc-header-cell:last-child {
+  border-width: 0;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.product-img {
+  width: 90px;
+  height: 105px;
+  border-radius: 20px;
+}
+
+.lg-btn {
+  border-radius: 30px;
+  height: 30px;
+  width: 85px;
+}
+
+.add-btn {
+  font-size: 28px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  &:hover {
+    background-color: #fcd5ce4f;
+    color: black !important;
+  }
+}
+.mid-quantity {
+  border-right: 1px solid #959595;
+  border-left: 1px solid #959595;
+  padding-inline: 10px;
+}
+
+i.quantity {
+  color: #000;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+.mixed-btn {
+  border: 2px solid #d9d9d9;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.close-icon {
+  font-size: 32px;
+  width: auto;
+}

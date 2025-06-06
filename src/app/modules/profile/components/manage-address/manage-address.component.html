@@ -4,7 +4,7 @@
   <div class="d-flex py-3 px-5 flex-wrap gap-3 justify-content-between align-items-center" [class.btm-border]="!$last">
     <div>
       <p class="mt-0 mb-2 font-md">{{ address.firstName }} {{ address.lastName }}</p>
-      <p class="my-0 font-sm address-gray">{{ address.fullAddress }}</p>
+      <p class="my-0 font-sm placeholder-text">{{ address.fullAddress }}</p>
     </div>
     <div class="d-flex align-items-center gap-5">
       <p class="my-0 font-sm cursor-pointer" (click)="editAddress($index)">

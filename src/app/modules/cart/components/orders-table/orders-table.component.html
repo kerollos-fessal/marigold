@@ -1,0 +1,67 @@
+<div class="orders-table">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="deletion">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon
+          (click)="deleteRow(element.id)"
+          class="cursor-pointer close-icon"
+          >close</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Product">
+      <th mat-header-cell *matHeaderCellDef>Product</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="d-flex align-items-center gap-4">
+          <div class="product-img trio-shadow">
+            <img class="w-100" [src]="element.src" alt="product" />
+          </div>
+          <div>
+            <p class="mt-0 font-sm mb-2">{{ element.name }}</p>
+            <p class="my-0 gray-text">{{ element.category }}</p>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.price.toFixed(2) }} EGP
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Quantity">
+      <th mat-header-cell *matHeaderCellDef>Quantity</th>
+      <td mat-cell *matCellDef="let element">
+        <div
+          class="lg-btn px-2 mixed-btn d-flex align-items-center justify-content-between"
+        >
+          <div (click)="updateQuantity(element.id, false)">
+            <i class="fa fa-minus cursor-pointer quantity"></i>
+          </div>
+          <div
+            class="mid-quantity d-flex align-items-center justify-content-center mx-1 py-0 h-100"
+          >
+            {{ element.quantity }}
+          </div>
+          <div (click)="updateQuantity(element.id, true)">
+            <i class="fa fa-plus quantity cursor-pointer"></i>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Subtotal">
+      <th mat-header-cell *matHeaderCellDef>Subtotal</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.subtotal.toFixed(2) }} EGP
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

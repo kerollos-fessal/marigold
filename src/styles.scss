@@ -8,6 +8,7 @@
   --gray-text: #00000069;
   --dark-gray-text: #848484;
   --semi-white-color: #FFFFFF8A;
+  --placeholder-text:  #00000059;
   --red-text: #D10000;
   --linear-back: linear-gradient(90deg, #000000 0%, #666666 100%);
   --linear-text: linear-gradient(90deg, #FF8FAB 0%, #995667 100%);
@@ -63,6 +64,10 @@ body {
 
 .dark-gray{
   color: var(--dark-gray-text);
+}
+
+.placeholder-text{
+  color: var(--placeholder-text);
 }
 
 .red-text{
@@ -176,7 +181,7 @@ select.form-select{
 }
 
 .custom-input::placeholder {
-  color: #00000059;
+  color: var(--placeholder-text);
   font-size: 24px;
   opacity: 1; 
 }

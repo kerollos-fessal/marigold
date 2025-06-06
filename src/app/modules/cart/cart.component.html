@@ -1,1 +1,13 @@
-<p>cart works!</p>
+<section class="cart">
+  <app-header [title]="'Shopping Cart'" />
+  <div class="mt-5 pt-3 container">
+    <div class="row">
+      <div class="col-md-8">
+        <app-orders-table />
+      </div>
+      <div class="col-sm-4 mx-auto">
+        <app-order-summary [btnTitle]="'Proceed to Check out'" [route]="'checkout'"/>
+      </div>
+    </div>
+  </div>
+</section>
