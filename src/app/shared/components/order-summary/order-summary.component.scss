@@ -1,0 +1,16 @@
+.order-summary{
+      border-radius: 30px
+}
+
+.title, .fees-wrapper{
+    border-bottom: 1px solid #56565657;
+
+}
+
+
+.proceed-btn {
+  &:hover {
+    background-color: #fcd5ce4f;
+    color: black !important;
+  }
+}

@@ -1,0 +1,182 @@
+<h3 class="font-bold mt-0 mb-5 pb-3">Billing Details</h3>
+<form [formGroup]="addressForm" (ngSubmit)="onSubmit()" class="address-form">
+  <div class="mb-4 w-100">
+    <label class="d-block font-md mb-3">Company (Optional)</label>
+    <div class="w-100">
+      <input
+        formControlName="company"
+        placeholder="Enter Company Name"
+        class="form-control rounded-5 custom-input font-md"
+      />
+    </div>
+  </div>
+  <div class="mb-4">
+    <label class="d-block font-md mb-3">Country *</label>
+    <select
+      formControlName="country"
+      aria-placeholder="Select Country"
+      class="form-select custom-input rounded-5"
+      aria-label="select country"
+    >
+      <option class="text-gray" value="" disabled selected hidden>
+        Select Country
+      </option>
+      <option value="1">Egypt</option>
+      <option value="2">America</option>
+      <option value="3">UAE</option>
+    </select>
+    @if(addressForm.get('country')?.hasError('required') &&
+    (addressForm.get('country')?.dirty || addressForm.get('country')?.touched)){
+    <p class="text-danger">country is required</p>
+
+    }
+  </div>
+  <div class="mb-4 w-100">
+    <label class="d-block font-md mb-3">Street Address *</label>
+    <div class="w-100">
+      <input
+        formControlName="street"
+        placeholder="Enter Street Address"
+        class="form-control rounded-5 custom-input font-md"
+        required
+      />
+      @if(addressForm.get('street')?.hasError('required') &&
+      (addressForm.get('street')?.dirty || addressForm.get('street')?.touched)){
+      <p class="text-danger">Street Address is required</p>
+      }
+    </div>
+  </div>
+  <div class="mb-4">
+    <label class="d-block font-md mb-3">City *</label>
+    <select
+      formControlName="city"
+      aria-placeholder="Select City"
+      class="form-select custom-input rounded-5"
+      aria-label="select state"
+    >
+      <option class="text-gray" value="" disabled selected hidden>
+        Select City
+      </option>
+      <option value="1">Alexandria</option>
+      <option value="2">Cairo</option>
+      <option value="3">Tanta</option>
+    </select>
+    @if(addressForm.get('city')?.hasError('required') &&
+    (addressForm.get('city')?.dirty || addressForm.get('city')?.touched)){
+    <p class="text-danger">City is required</p>
+
+    }
+  </div>
+  <div class="mb-4">
+    <label class="d-block font-md mb-3">State *</label>
+    <select
+      formControlName="state"
+      aria-placeholder="Select state"
+      class="form-select custom-input rounded-5"
+      aria-label="select state"
+    >
+      <option class="text-gray" value="" disabled selected hidden>
+        Select State
+      </option>
+      <option value="1">Egypt</option>
+      <option value="2">America</option>
+      <option value="3">UAE</option>
+    </select>
+    @if(addressForm.get('state')?.hasError('required') &&
+    (addressForm.get('state')?.dirty || addressForm.get('state')?.touched)){
+    <p class="text-danger">State is required</p>
+
+    }
+  </div>
+  <div class="mb-4 w-100">
+    <label class="d-block font-md mb-3">Zip Code *</label>
+    <div class="w-100">
+      <input
+        type="number"
+        formControlName="zipCode"
+        placeholder="Enter Zip Code"
+        class="form-control rounded-5 custom-input font-md"
+        required
+      />
+      @if(addressForm.get('zipCode')?.hasError('required') &&
+      (addressForm.get('zipCode')?.dirty ||
+      addressForm.get('zipCode')?.touched)){
+      <p class="text-danger">Zip Code is required</p>
+      }
+    </div>
+  </div>
+  <div class="mb-4 w-100">
+    <label class="d-block font-md mb-3">Phone *</label>
+    <div class="w-100">
+      <input
+        type="number"
+        formControlName="phone"
+        placeholder="Enter Phone Number"
+        class="form-control rounded-5 custom-input font-md"
+        required
+      />
+      @if(addressForm.get('phone')?.hasError('required') &&
+      (addressForm.get('phone')?.dirty || addressForm.get('phone')?.touched)){
+      <p class="text-danger">Phone is required</p>
+      }
+    </div>
+  </div>
+  <div class="mb-4 w-100">
+    <label class="d-block font-md mb-3">Email Address *</label>
+    <div class="w-100">
+      <input
+        formControlName="email"
+        placeholder="Enter Email Address"
+        class="form-control rounded-5 custom-input font-md"
+        required
+      />
+      @if(addressForm.get('email')?.hasError('required') &&
+      (addressForm.get('email')?.dirty || addressForm.get('email')?.touched)){
+      <p class="text-danger">Email is required</p>
+      } @if(addressForm.get('email')?.hasError('email') &&
+      (addressForm.get('email')?.dirty || addressForm.get('email')?.touched)){
+      <p class="text-danger">Incorrect email format</p>
+      }
+    </div>
+  </div>
+  <label class="d-block font-md mb-3" for="payment-method">Delivery Address *</label>
+   <div class="d-flex gap-4 align-items-center">
+      <div class="form-check  d-flex align-items-center w-100 payment-method px-0 py-2 rounded-5 custom-input font-md">
+        <input
+          class="form-check-input cursor-pointer ms-3 mt-0"
+          type="radio"
+          id="sameShippingAddress"
+          formControlName="paymentMethod"
+          value="sameShippingAddress"
+        />
+        <label class="form-check-label ms-2 cursor-pointer" for="sameShippingAddress">
+          Same as shipping address
+        </label>
+      </div>
+      <div class="form-check  d-flex align-items-center w-100 gray-border px-0 py-2 rounded-5 custom-input font-md">
+        <input
+          class="form-check-input ms-3 mt-0 cursor-pointer"
+          type="radio"
+          id="addressAbove"
+          formControlName="paymentMethod"
+          value="addressAbove"
+        />
+        <label class="form-check-label ms-2 cursor-pointer" for="addressAbove">
+          Use the above billing address
+        </label>
+      </div>
+    </div>
+
+<button
+  class="primary-bg btn font-md submit-form w-fit rounded-pill single-shadow px-4 mt-3"
+  [class]="
+    !shouldEnableSubmit
+      ? 'text-secondary border border-secondary'
+      : 'text-white'
+  "
+  type="submit"
+  [disabled]="!shouldEnableSubmit"
+>
+  Submit
+</button>
+</form>

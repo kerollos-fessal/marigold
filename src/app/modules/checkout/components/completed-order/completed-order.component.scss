@@ -1,0 +1,39 @@
+.order-info-header{
+    min-height: 220px;
+    border-radius: 30px;
+}
+
+.info-p{
+    font-family: 'inter';
+}
+
+.v-border{
+    width: 1px;
+    height: 155px;
+    background-color: #fff;
+}
+
+.download-btn{
+    height: 60px;
+    font-family: 'inter';
+    border-radius: 20px;
+    background-color: #fff;
+      &:hover {
+        background-color: #fcd5ce4f;
+        color: #fff !important;
+    }
+}
+
+.completed-summary{
+    border-radius: 30px;
+}
+
+.bm-border{
+border-bottom: 1px solid #56565657;
+}
+
+.product-img{
+    width:95px ;
+    height: 105px;
+    border-radius: 20px;
+}
