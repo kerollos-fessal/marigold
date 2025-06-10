@@ -1,14 +1,12 @@
-<section class="checkout">
+<section class="payment-method">
   <app-header [title]="'Check Out'" />
   <div class="mt-5 pt-3 container">
     <div class="row">
       <div class="col-md-8">
-        <app-billing-details />
+        <app-choose-payment />
       </div>
       <div class="col-md-6 col-lg-4 mx-auto">
-        <div class="mt-5">
-            <app-order-summary [btnTitle]="'Proceed to payment'" [route]="'payment'"/>
-        </div>
+        <app-order-summary [btnTitle]="'Confirm Payment'" [route]="'finishOrder'"/>
       </div>
     </div>
   </div>

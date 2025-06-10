@@ -1,22 +1,16 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { Address } from 'src/app/shared/models/profile/address.interface';
+import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-payment-method',
-  imports: [FormsModule, ReactiveFormsModule, DatePipe],
-  templateUrl: './payment-method.component.html',
-  styleUrl: './payment-method.component.scss',
+  selector: 'app-choose-payment',
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, DatePipe],
+  templateUrl: './choose-payment.component.html',
+  styleUrl: './choose-payment.component.scss'
 })
-export class PaymentMethodComponent {
-  cardForm!: FormGroup;
+export class ChoosePaymentComponent {
+selectedPaymentMethod: string = '';
+cardForm!: FormGroup;
 todayDate = new Date();
 selectedcard: boolean = false;
 savedCards: { number: string; maskedNumber: string }[] = [];
@@ -32,7 +26,7 @@ initCardForm() {
     cardNumber: [
       '', 
       [
-        Validators.required,
+        // Validators.required,
         Validators.pattern(/^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/)
       ]
     ],
@@ -46,19 +40,25 @@ initCardForm() {
     this.savedCards.splice(index, 1);
   }
 
- onSubmit() {
-    if (this.cardForm.valid) {
-      const cardNumber = this.cardForm.value.cardNumber;
-      const maskedNumber = this.maskCardNumber(cardNumber);
-      
-      this.savedCards.push({
-        number: cardNumber,
-        maskedNumber: maskedNumber
-      });
+onSubmit() {
+  if (this.cardForm.valid) {
+    const cardNumber = this.cardForm.value.cardNumber;
+    const maskedNumber = this.maskCardNumber(cardNumber);
+    
+    this.savedCards.push({
+      number: cardNumber,
+      maskedNumber: maskedNumber
+    });
 
-      this.cardForm.reset();
+    if (this.cardForm.value.saveCard) {
+      this.selectedPaymentMethod = `card-${this.savedCards.length - 1}`;
     }
+
+    this.cardForm.reset({
+      saveCard: this.cardForm.value.saveCard
+    });
   }
+}
 
 maskCardNumber(cardNumber: any): string {
   const cardStr = String(cardNumber || '').replace(/\D/g, '');
@@ -71,4 +71,5 @@ maskCardNumber(cardNumber: any): string {
   
   return masked.replace(/(.{4})/g, '$1 ').trim();
 }
+
 }

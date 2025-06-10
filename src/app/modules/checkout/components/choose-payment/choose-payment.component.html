@@ -1,57 +1,72 @@
-<section class="payment-method">
-  <div
-    class="payment-wrapper gray-border mb-4 px-5 d-flex flex-wrap align-items-center justify-content-between gap-3"
-  >
+<h3 class="font-bold mt-0 mb-5 pb-3">Select Payment Method</h3>
+<div class="payment-options">
+  <!-- PayPal Option -->
+  <div class="payment-wrapper gray-border mb-4 px-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
     <div class="font-md d-flex align-items-center gap-3">
+      <input 
+        type="radio" 
+        id="paypal" 
+        name="paymentMethod" 
+        [(ngModel)]="selectedPaymentMethod" 
+        value="paypal"
+        class="form-check-input me-2 cursor-pointer"
+      >
       <img src="./assets/images/paypal.svg" alt="paypal" />
-      Paypal
+      <label for="paypal" class="cursor-pointer">Paypal</label>
     </div>
-    <p class="my-0 font-md cursor-pointer">Link Account</p>
   </div>
-  @if(savedCards.length === 0){
-    <div 
-    class="payment-wrapper gray-border mb-4 px-5 d-flex flex-wrap align-items-center justify-content-between gap-3"
-  >
-    <div class="font-md d-flex align-items-center gap-3">
-      <img src="./assets/images/visa.svg" alt="paypal" />
-      **** **** **** 8047
+
+  <!-- Saved Cards -->
+  @for (card of savedCards; track $index) {
+    <div class="payment-wrapper mb-4 px-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <div class="font-md d-flex align-items-center gap-3">
+        <input 
+          type="radio" 
+          id="card-{{$index}}" 
+          name="paymentMethod" 
+          [(ngModel)]="selectedPaymentMethod" 
+          value="card-{{$index}}"
+          class="form-check-input me-2 cursor-pointer"
+        >
+        <img class="cursor-pointer" src="./assets/images/visa.svg" alt="visa" />
+        <label class="cursor-pointer" for="card-{{$index}}">{{ card.maskedNumber }}</label>
+      </div>
+      <p class="my-0 font-md red-text cursor-pointer" (click)="deleteCard($index)">Delete</p>
     </div>
-    <p class="my-0 font-md red-text cursor-pointer">Delete</p>
-  </div>
-}
-   @for (card of savedCards; track $index) {
-<div
-    class="payment-wrapper gray-border mb-4 px-5 d-flex flex-wrap align-items-center justify-content-between gap-3"
-  >
+  }
+
+  <!-- Google Pay Option -->
+  <div class="payment-wrapper px-4 mb-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
     <div class="font-md d-flex align-items-center gap-3">
-      <img src="./assets/images/visa.svg" alt="visa" />
-      {{ card.maskedNumber }}
-    </div>
-    <p class="my-0 font-md red-text cursor-pointer" (click)="deleteCard($index)">Delete</p>
-  </div>
-   }
-  <div
-    class="payment-wrapper gray-border px-5 mb-4 d-flex flex-wrap align-items-center justify-content-between gap-3"
-  >
-    <div class="font-md d-flex align-items-center gap-3">
+      <input 
+        type="radio" 
+        id="googlePay" 
+        name="paymentMethod" 
+        [(ngModel)]="selectedPaymentMethod" 
+        value="googlePay"
+        class="form-check-input me-2 cursor-pointer"
+      >
       <img src="./assets/images/google.svg" alt="google" />
-      Google Pay
+      <label class="cursor-pointer" for="googlePay">Google Pay</label>
     </div>
-    <p class="my-0 font-md cursor-pointer">Link Account</p>
   </div>
-  <div class="payment-wrapper gray-border px-5 pt-4">
+
+
+</div>
+
+<div class="payment-wrapper px-5 pt-4">
     <div class="font-md d-flex pt-2 mb-4 pb-3 align-items-center gap-3">
       <img src="./assets/images/card.svg" alt="paypal" />
       Add New Credit/Debit Card
     </div>
-    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="card-form">
+     <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="card-form">
       <div class="mb-4 w-100">
         <label class="d-block font-md mb-3">Card Holder Name *</label>
         <div class="w-100">
           <input
             formControlName="holderName"
             placeholder="Card Holder Name"
-            class="form-control rounded-5 custom-input font-md"
+            class="form-control  rounded-5 custom-input font-md"
             required
           />
           @if(cardForm.get('holderName')?.hasError('required') &&
@@ -148,5 +163,4 @@
         Add Card
       </button>
     </form>
-  </div>
-</section>
+</div>
