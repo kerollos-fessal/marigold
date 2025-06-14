@@ -1,0 +1,59 @@
+<section class="order-credentials mt-5 pt-3">
+    <p class="mt-0 mb-5 font-sm tretiary pb-3">To track your order please enter your Order ID in box below and press the “ Track Order” button. This was given to you on your receipt and in the confirmation email you should have received.</p>
+  <form
+    [formGroup]="orderCredsForm"
+    (ngSubmit)="onSubmit()"
+    class="review-form"
+  >
+      <div class="mb-4 w-100">
+        <label class="d-block font-md mb-3">Order ID *</label>
+        <div class="w-100">
+          <input
+            formControlName="orderId"
+            placeholder="Enter Your Order ID"
+            class="form-control rounded-5 custom-input font-md"
+            required
+          />
+          @if(orderCredsForm.get('orderId')?.hasError('required') &&
+          (orderCredsForm.get('orderId')?.dirty ||
+          orderCredsForm.get('orderId')?.touched)){
+          <p class="text-danger">Order Id is required</p>
+          }
+        </div>
+      </div>
+  
+    <div class="mb-4 w-100">
+      <label class="d-block font-md mb-3">Email *</label>
+      <div class="w-100">
+        <input
+          formControlName="email"
+          placeholder="Enter Email Address"
+          class="form-control rounded-5 custom-input font-md"
+          required
+        />
+        @if(orderCredsForm.get('email')?.hasError('required') &&
+        (orderCredsForm.get('email')?.dirty ||
+        orderCredsForm.get('email')?.touched)){
+        <p class="text-danger">Email is required</p>
+        } @if(orderCredsForm.get('email')?.hasError('email') &&
+        (orderCredsForm.get('email')?.dirty ||
+        orderCredsForm.get('email')?.touched)){
+        <p class="text-danger">Incorrect email format</p>
+        }
+      </div>
+    </div>
+
+    <button
+      class="primary-bg btn font-md submit-form w-fit rounded-pill single-shadow px-3 mt-3"
+      [class]="
+        orderCredsForm.invalid
+          ? 'text-secondary border border-secondary'
+          : 'text-white'
+      "
+      type="submit"
+      [disabled]="!orderCredsForm.valid"
+    >
+      Track Order
+    </button>
+  </form>
+</section>
