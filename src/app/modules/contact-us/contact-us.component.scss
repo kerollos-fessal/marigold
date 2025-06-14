@@ -1,0 +1,13 @@
+.contact-img{
+    width: 510px;
+    height: 665px;
+    border-radius: 30px;
+}
+
+.submit-form{
+  height: 65px;
+     &:hover {
+        background-color: #fcd5ce4f;
+        color: black !important;
+    }
+}
