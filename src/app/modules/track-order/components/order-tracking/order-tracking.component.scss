@@ -1,0 +1,62 @@
+
+
+.static-stepper {
+  pointer-events: none;
+  background-color: transparent;
+  height: unset;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .check-box {
+    width: 40px;
+  }
+  
+
+  ::ng-deep .mat-step-header{
+      height: fit-content;
+      padding: 0;
+      justify-content: center;
+  }
+
+.img-container{
+    min-height: 52px;
+}
+
+::ng-deep .mat-horizontal-stepper-wrapper{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+  ::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: transparent;
+  }
+}
+
+::ng-deep .mat-horizontal-content-container, ::ng-deep .mat-step-icon-state-number{
+    display: none;
+}
+
+::ng-deep .mat-stepper-horizontal-line{
+border-top-width: 3px !important;
+margin: 0px -20px !important;
+}  
+
+
+::ng-deep {
+  /* Targets the line AFTER a completed step header */
+  mat-step-header.completed + .mat-stepper-horizontal-line {
+    border-top-color: var(--primary-color) !important;
+  }
+
+  /* Targets the line AFTER a pending step header */
+  mat-step-header.pending + .mat-stepper-horizontal-line {
+    border-top-color: #DADADA !important;
+  }
+}
+
+.product-img{
+    width:95px ;
+    height: 105px;
+    border-radius: 20px;
+}

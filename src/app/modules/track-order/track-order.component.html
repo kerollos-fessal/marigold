@@ -1,1 +1,11 @@
-<p>track-order works!</p>
+<section class="track-order">
+     <app-header [title]="'Track Your Order'" />
+     <div class="container">
+        @if(credsVerified){
+            <app-order-tracking />
+
+        }@else{
+            <app-order-creds (credsVerifiedChange)="onCredsVerifiedChange($event)" />
+        }
+     </div>
+</section>

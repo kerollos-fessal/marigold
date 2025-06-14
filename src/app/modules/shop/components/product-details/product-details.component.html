@@ -95,7 +95,7 @@
           <div class="volume font-sm trio-shadow d-flex justify-content-center align-items-center">50 ml</div>
         </div>
         <div class="d-flex flex-wrap gap-4 mb-5 pb-5">
-            <div class="lg-btn  px-3 font-lg mixed-btn d-flex align-items-center justify-content-between">
+            <div class="lg-btn radius-30 px-3 font-lg mixed-btn d-flex align-items-center justify-content-between">
                 <div (click)="updateQuantity(false)"><i class="fa fa-minus  cursor-pointer quantity"></i></div>
                 <div class="mid-quantity d-flex align-items-center justify-content-center px-4 py-0 h-100 ">{{quantity}}</div>
                 <div (click)="updateQuantity(true)"><i class="fa  fa-plus quantity cursor-pointer"></i></div>
@@ -308,7 +308,7 @@
     <label class="d-block font-md mb-3">Photo / Video (Optional)</label>
     <div>
       <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*,video/*" hidden>
-      <button  type="button" class="w-100 btn attach-btn gray-border d-flex flex-column gap-3 py-5 justify-content-center align-items-center" (click)="fileInput.click()">
+      <button  type="button" class="w-100 btn radius-30 gray-border d-flex flex-column gap-3 py-5 justify-content-center align-items-center" (click)="fileInput.click()">
        <i class="fa-solid fa-file-circle-plus"></i>
        <span class="placeholder-text font-sm">Drag a Photo or Video</span>
        <span class="font-md font-bold">Browse</span>

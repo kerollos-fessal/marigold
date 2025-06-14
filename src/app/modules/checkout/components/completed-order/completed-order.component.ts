@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 import { OrderInfo } from 'src/app/shared/models/orders/order-info.interface';
 
@@ -15,4 +16,10 @@ export class CompletedOrderComponent {
     transactionId: 'TR542SS',
     deliveryDate: '2 January 2025 ',
   };
+
+  constructor(private router: Router){}
+
+  toTrackOrder(){
+    this.router.navigate(['/track-order']);
+  }
 }

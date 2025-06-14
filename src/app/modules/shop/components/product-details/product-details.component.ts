@@ -92,7 +92,6 @@ initReviewForm(){
       if (this.selectedFile) {
         formData.append('attachment', this.selectedFile);
       }
-
       console.log('Form submitted:', formData);
     }
   }
